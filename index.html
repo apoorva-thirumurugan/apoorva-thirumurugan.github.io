@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoorva Thirumurugan | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">AT</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Animated Cyber Banner -->
+  <header class="cyber-banner">
+    <div class="cyber-grid"></div>
+    <div class="cyber-lines">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+    <div class="cyber-particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="banner-content">
+      <h1 class="cyber-title">
+        <span class="glitch" data-text="Hi, I'm Apoorva">Hi, I'm Apoorva</span>
+        <span class="cursor-blink">|</span>
+      </h1>
+      <p class="cyber-subtitle">
+        <span class="typewriter">Computer Engineering (4th Year) Student at the University of Guelph</span><br>
+        <span class="typewriter-delay">Cybersecurity Co-op Student at CCS Guelph</span>
+      </p>
+      <div class="social-header">
+        <a href="https://www.linkedin.com/in/apoorva-thirumurugan" target="_blank" aria-label="LinkedIn"
+          class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm passionate about blending engineering, cybersecurity, and creativity to design secure, intelligent systems
+      that make a real impact. My work spans from automating SOC workflows to developing embedded systems and creating
+      accessible security education resources.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="experience-card">
+      <h3>Information Security Co-op – Computing & Communications Services (CCS), University of Guelph</h3>
+      <p><strong>Jan 2025 – Present | Guelph, ON</strong></p>
+      <ul>
+        <li>Triaged and resolved information security tickets and incidents involving account compromises, phishing, and
+          other cybersecurity threats.</li>
+        <li>Developed and deployed <strong>Power Automate</strong> solutions to automate SOC processes, demonstrated
+          automation capabilities to SOC and IAM teams.</li>
+        <li>Monitored and analyzed security service logs for anomalies and risks, improving incident detection and
+          response workflows.</li>
+        <li>Created a <strong>PHP script</strong> to extend the Threat Intelligence Feed Editor (TIFE), increasing
+          efficiency and accuracy of threat data management.</li>
+        <li>Authored monthly cybersecurity blog articles, translating complex technical topics into accessible materials
+          for the university community.</li>
+      </ul>
+    </div>
+
+    <div class="experience-card">
+      <h3>Research Assistant – Biswas Soil Lab, University of Guelph</h3>
+      <p><strong>Jun 2024 – Aug 2024 | Guelph, ON</strong></p>
+      <ul>
+        <li>Developed a <strong>PCB in KiCad</strong> for an in-field soil carbon sensor system.</li>
+        <li>Created <strong>Python scripts</strong> for web scraping soil resource data from websites and PDFs.</li>
+        <li>Collected soil images for AI model training and performed schematic design and data management.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Button Section -->
+  <section class="cta-section">
+    <div class="cta-card">
+      <h2><i class="fas fa-code"></i> Explore My Projects</h2>
+      <p>Check out my technical projects, from operating systems development to CAD design</p>
+      <a href="projects.html" class="cta-button">
+        View All Projects <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Tab Navigation -->
+  <div class="tabs-container">
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="extracurriculars">
+        <i class="fas fa-users"></i> Extra Curriculars
+      </button>
+      <button class="tab-btn" data-tab="certifications">
+        <i class="fas fa-certificate"></i> Certifications
+      </button>
+    </div>
+
+    <!-- Extra Curriculars Tab -->
+    <div class="tab-content" id="extracurriculars-tab">
+      <div class="extracurricular-card">
+        <div class="extracurricular-header">
+          <h3><i class="fas fa-briefcase"></i> Vice President Programming</h3>
+          <span class="org-name">Guelph Engineering Professional Development (GEPD)</span>
+        </div>
+        <p>Leading programming initiatives and organizing professional development events for engineering students.</p>
+      </div>
+
+      <div class="extracurricular-card">
+        <div class="extracurricular-header">
+          <h3><i class="fas fa-heart"></i> Big Sisters Little Sisters (BSLS) Mentor</h3>
+          <span class="org-name">Mentorship Program</span>
+        </div>
+        <p>Providing guidance and support to younger students through mentorship and community engagement.</p>
+      </div>
+
+      <div class="extracurricular-card">
+        <div class="extracurricular-header">
+          <h3><i class="fas fa-female"></i> Women in Science and Engineering (WiSE)</h3>
+          <span class="org-name">Student Organization</span>
+        </div>
+        <p>Active member promoting diversity and inclusion in STEM fields through events and networking opportunities.
+        </p>
+      </div>
+
+      <div class="extracurricular-card">
+        <div class="extracurricular-header">
+          <h3><i class="fas fa-pen-fancy"></i> Writing Peer Helper</h3>
+          <span class="org-name">Student Experience, Peer Helper Program (PHP)</span>
+        </div>
+        <p>Assisting fellow students with writing skills, providing feedback, and supporting academic success.</p>
+      </div>
+    </div>
+
+    <!-- Certifications Tab -->
+    <div class="tab-content" id="certifications-tab">
+      <div class="certification-card">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Cybersecurity Certifications</h3>
+            <p class="cert-issuer">Various Organizations</p>
+            <p class="cert-date">Ongoing</p>
+          </div>
+        </div>
+        <p>Continuously expanding cybersecurity knowledge through professional certifications and training programs.</p>
+      </div>
+
+      <div class="certification-card">
+        <div class="cert-header">
+          <div class="cert-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="cert-info">
+            <h3>Cloud & DevOps Certifications</h3>
+            <p class="cert-issuer">Industry Standard Programs</p>
+            <p class="cert-date">In Progress</p>
+          </div>
+        </div>
+        <p>Building expertise in cloud infrastructure and DevOps practices relevant to modern software development.</p>
+      </div>
+
+      <!-- Add more certifications as you obtain them -->
+      <div class="certification-placeholder">
+        <i class="fas fa-plus-circle"></i>
+        <p>More certifications coming soon!</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Apoorva Thirumurugan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
