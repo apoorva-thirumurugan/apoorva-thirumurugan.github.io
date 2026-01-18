@@ -893,6 +893,16 @@ li {
   display: block;
 }
 
+.cert-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cert-link:hover {
+  color: inherit;
+}
+
 h3 {
   margin-top: 0;
   color: #f0f6fc;
