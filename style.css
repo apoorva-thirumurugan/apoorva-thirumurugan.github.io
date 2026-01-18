@@ -104,7 +104,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     linear-gradient(rgba(155, 107, 67, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(155, 107, 67, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -113,8 +113,13 @@ body {
 }
 
 @keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(50px, 50px);
+  }
 }
 
 .cyber-lines {
@@ -152,9 +157,17 @@ body {
 }
 
 @keyframes scanLine {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .cyber-particles {
@@ -207,18 +220,23 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
     opacity: 0.3;
   }
+
   25% {
     transform: translateY(-30px) translateX(20px);
     opacity: 1;
   }
+
   50% {
     transform: translateY(-60px) translateX(-20px);
     opacity: 0.5;
   }
+
   75% {
     transform: translateY(-30px) translateX(10px);
     opacity: 0.8;
@@ -268,21 +286,55 @@ body {
 }
 
 @keyframes glitch-anim {
-  0% { clip: rect(42px, 9999px, 44px, 0); }
-  20% { clip: rect(12px, 9999px, 59px, 0); }
-  40% { clip: rect(33px, 9999px, 20px, 0); }
-  60% { clip: rect(87px, 9999px, 53px, 0); }
-  80% { clip: rect(23px, 9999px, 92px, 0); }
-  100% { clip: rect(4px, 9999px, 98px, 0); }
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+  }
+
+  20% {
+    clip: rect(12px, 9999px, 59px, 0);
+  }
+
+  40% {
+    clip: rect(33px, 9999px, 20px, 0);
+  }
+
+  60% {
+    clip: rect(87px, 9999px, 53px, 0);
+  }
+
+  80% {
+    clip: rect(23px, 9999px, 92px, 0);
+  }
+
+  100% {
+    clip: rect(4px, 9999px, 98px, 0);
+  }
 }
 
 @keyframes glitch-anim2 {
-  0% { clip: rect(65px, 9999px, 100px, 0); }
-  20% { clip: rect(79px, 9999px, 85px, 0); }
-  40% { clip: rect(66px, 9999px, 4px, 0); }
-  60% { clip: rect(29px, 9999px, 54px, 0); }
-  80% { clip: rect(92px, 9999px, 98px, 0); }
-  100% { clip: rect(54px, 9999px, 33px, 0); }
+  0% {
+    clip: rect(65px, 9999px, 100px, 0);
+  }
+
+  20% {
+    clip: rect(79px, 9999px, 85px, 0);
+  }
+
+  40% {
+    clip: rect(66px, 9999px, 4px, 0);
+  }
+
+  60% {
+    clip: rect(29px, 9999px, 54px, 0);
+  }
+
+  80% {
+    clip: rect(92px, 9999px, 98px, 0);
+  }
+
+  100% {
+    clip: rect(54px, 9999px, 33px, 0);
+  }
 }
 
 .cursor-blink {
@@ -291,8 +343,16 @@ body {
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .cyber-subtitle {
@@ -320,13 +380,25 @@ body {
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-cursor {
-  from, to { border-color: transparent; }
-  50% { border-color: #9b6b43; }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #9b6b43;
+  }
 }
 
 /* ===== SOCIAL ICONS ===== */
@@ -512,14 +584,16 @@ h2 {
   margin-bottom: 20px;
 }
 
-p, li {
+p,
+li {
   font-size: 1rem;
   line-height: 1.6;
   color: #c9d1d9;
 }
 
 /* ===== CARDS ===== */
-.project-card, .experience-card {
+.project-card,
+.experience-card {
   background: #161b22;
   border: 1px solid #30363d;
   border-radius: 10px;
@@ -529,7 +603,8 @@ p, li {
   transition: all 0.25s ease;
 }
 
-.project-card:hover, .experience-card:hover {
+.project-card:hover,
+.experience-card:hover {
   transform: translateY(-4px);
   border-color: #9b6b43;
   box-shadow: 0 0 12px rgba(155, 107, 67, 0.2);
@@ -600,6 +675,7 @@ p, li {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -803,75 +879,92 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
-  h1 { font-size: 2.2rem; }
-  header p { font-size: 1rem; }
-  section { margin: 40px auto; }
-  
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    margin: 40px auto;
+  }
+
   .nav-links {
     gap: 15px;
   }
-  
+
   .nav-link {
     font-size: 0.9rem;
   }
-  
+
   .cyber-title {
     font-size: 2.2rem;
   }
-  
+
   .cyber-subtitle {
     font-size: 1rem;
   }
-  
+
   .cyber-banner {
     min-height: 400px;
     padding: 120px 20px 80px;
   }
-  
+
   .page-header {
     padding: 100px 20px 50px;
   }
-  
+
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .cta-card {
     padding: 30px 20px;
   }
-  
+
   .cta-card h2 {
     font-size: 1.5rem;
   }
-  
+
   .tabs-nav {
     gap: 5px;
   }
-  
+
   .tab-btn {
     padding: 12px 15px;
     font-size: 0.9rem;
   }
-  
+
   .tab-btn i {
     font-size: 0.9rem;
   }
-  
+
   .project-header {
     flex-direction: column;
   }
-  
+
   .cert-header {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .cert-icon {
     width: 50px;
     height: 50px;
   }
-  
+
   .cert-icon i {
     font-size: 1.2rem;
   }
+}
+
+.pixel-name {
+  height: 110px;
+  /* adjust */
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
 }
