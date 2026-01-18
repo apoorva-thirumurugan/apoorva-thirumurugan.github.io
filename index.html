@@ -13,7 +13,9 @@
   <!-- Navigation Bar -->
   <nav class="main-nav">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">AT</a>
+      <a href="index.html" class="nav-logo">
+        <img src="assets/Logo.png" alt="AT logo" class="pixel-logo">
+      </a>
       <div class="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="projects.html" class="nav-link">Projects</a>
@@ -151,52 +153,63 @@
     </div>
 
     <!-- Certifications Tab -->
-    <div class="tab-content" id="certifications-tab">
-      <!-- ISC2 CC -->
-      <div class="certification-card">
-        <div class="cert-header">
-          <div class="cert-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <div class="cert-info">
-            <h3>Certified in Cybersecurity (CC)</h3>
-            <p class="cert-issuer">ISC2 (International Information System Security Certification Consortium)</p>
-            <p class="cert-date">Certified Since: 2025</p>
-            <p class="cert-id">Certification ID: 2359202</p>
-          </div>
+    <div class="certification-card cert-toggle" data-target="cert-isc2">
+      <div class="cert-header">
+        <div class="cert-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="cert-info">
+          <h3>Certified in Cybersecurity (CC)</h3>
+          <p class="cert-issuer">ISC2 (International Information System Security Certification Consortium)</p>
+          <p class="cert-date">Certified Since: 2025</p>
+          <p class="cert-id">Certification ID: 2359202</p>
         </div>
       </div>
 
-      <!-- PCEP -->
-      <div class="certification-card">
-        <div class="cert-header">
-          <div class="cert-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="cert-info">
-            <h3>Certified Entry-Level Python Programmer (PCEP™)</h3>
-            <p class="cert-issuer">Python Institute</p>
-            <p class="cert-date">Certified Since: May 2024</p>
-            <p class="cert-id">Certification ID: 6HR4.sUqf.PQLh</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CSWA -->
-      <div class="certification-card">
-        <div class="cert-header">
-          <div class="cert-icon">
-            <i class="fas fa-drafting-compass"></i>
-          </div>
-          <div class="cert-info">
-            <h3>Certified SOLIDWORKS Associate (CSWA) in Mechanical Design</h3>
-            <p class="cert-issuer">SOLIDWORKS</p>
-            <p class="cert-date">Certified Since: April 2024</p>
-          </div>
-        </div>
+      <div class="cert-details" id="cert-isc2">
+        <img src="assets/isc2_cc.png" alt="ISC2 CC certificate" class="cert-image">
       </div>
     </div>
+
+
+    <!-- PCEP -->
+    <div class="certification-card cert-toggle" data-target="cert-pcep">
+      <div class="cert-header">
+        <div class="cert-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="cert-info">
+          <h3>Certified Entry-Level Python Programmer (PCEP™)</h3>
+          <p class="cert-issuer">Python Institute</p>
+          <p class="cert-date">Certified Since: May 2024</p>
+          <p class="cert-id">Certification ID: 6HR4.sUqf.PQLh</p>
+        </div>
+      </div>
+
+      <div class="cert-details" id="cert-pcep">
+        <img src="assets/python_pcep.png" alt="PCEP certificate" class="cert-image">
+      </div>
+    </div>
+
+
+    <!-- CSWA -->
+    <divuv <div class="certification-card cert-toggle" data-target="cert-cswa">
+      <div class="cert-header">
+        <div class="cert-icon">
+          <i class="fas fa-drafting-compass"></i>
+        </div>
+        <div class="cert-info">
+          <h3>Certified SOLIDWORKS Associate (CSWA) in Mechanical Design</h3>
+          <p class="cert-issuer">SOLIDWORKS</p>
+          <p class="cert-date">Certified Since: April 2024</p>
+        </div>
+      </div>
+
+      <div class="cert-details" id="cert-cswa">
+        <img src="assets/cswa.png" alt="CSWA certificate" class="cert-image">
+      </div>
   </div>
+
 
   <footer>
     <p>© 2025 Apoorva Thirumurugan</p>

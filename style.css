@@ -33,6 +33,10 @@ body {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: 'Fira Code', monospace;
   font-size: 1.5rem;
   font-weight: 600;
@@ -775,6 +779,35 @@ li {
 }
 
 /* ===== CERTIFICATION CARDS ===== */
+/* ===== CERTIFICATION EXPAND (click to show image) ===== */
+.cert-toggle {
+  cursor: pointer;
+}
+
+.cert-details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  margin-top: 10px;
+}
+
+.cert-details.open {
+  max-height: 900px;
+  /* increase if your image is tall */
+  opacity: 1;
+}
+
+.cert-image {
+  width: 100%;
+  max-width: 760px;
+  /* adjust */
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+}
+
 .certification-card {
   background: #161b22;
   border: 1px solid #30363d;
@@ -967,4 +1000,13 @@ footer {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   vertical-align: middle;
+}
+
+.pixel-logo {
+  height: 34px;
+  /* try 34 first */
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
 }
