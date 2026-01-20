@@ -929,10 +929,6 @@ li {
   color: inherit;
 }
 
-document.querySelectorAll('.verify-link').forEach(link=> {
-    link.addEventListener('click', (e)=> e.stopPropagation());
-  });
-
 h3 {
   margin-top: 0;
   color: #f0f6fc;
