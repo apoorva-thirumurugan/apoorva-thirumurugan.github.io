@@ -188,8 +188,7 @@
 
 
     <!-- PCEP -->
-    <a class="certification-card cert-link" href="https://verify.openedg.org/?id=6HR4.sUqf.PQLh" target="_blank"
-      rel="noopener noreferrer">
+    <div class="certification-card">
       <div class="cert-header">
         <div class="cert-icon">
           <i class="fas fa-code"></i>
@@ -198,10 +197,16 @@
           <h3>Certified Entry-Level Python Programmer (PCEP™)</h3>
           <p class="cert-issuer">Python Institute</p>
           <p class="cert-date">Certified Since: May 2024</p>
-          <p class="cert-issuer" style="margin-top:8px;">Click to verify ↗</p>
+          <p class="cert-id">Certification ID: 6HR4.sUqf.PQLh</p>
+
+          <a class="verify-link" href="https://verify.openedg.org/?id=6HR4.sUqf.PQLh" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fas fa-link"></i> Click to verify
+          </a>
         </div>
       </div>
-    </a>
+    </div>
+
 
 
 
@@ -223,6 +228,42 @@
       </div>
   </div>
 
+  <!-- Experience Gallery Modal -->
+  <div class="modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Experience gallery">
+      <div class="modal-topbar">
+        <div class="camera-led"></div>
+        <div class="modal-title">
+          <i class="fas fa-camera-retro"></i>
+          <span id="modalGalleryName">Highlights</span>
+        </div>
+        <button class="modal-close" type="button" aria-label="Close gallery">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <button class="nav-btn prev" type="button" aria-label="Previous image">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <figure class="modal-figure">
+          <img id="modalImage" src="" alt="Gallery image">
+          <figcaption id="modalCaption"></figcaption>
+        </figure>
+
+        <button class="nav-btn next" type="button" aria-label="Next image">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+        <span id="modalCounter">1 / 1</span>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Apoorva Thirumurugan</p>
