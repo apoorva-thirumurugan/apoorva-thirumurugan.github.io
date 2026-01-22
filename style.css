@@ -1244,3 +1244,131 @@ footer {
     height: 58px;
   }
 }
+
+/* ===== PROJECTS PAGE: FILTER LAYOUT ===== */
+.projects-layout {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.projects-filter {
+  position: sticky;
+  top: 110px; /* below fixed nav */
+}
+
+.filter-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 0 12px rgba(155, 107, 67, 0.06);
+}
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fira Code', monospace;
+  color: #f0f6fc;
+  margin-bottom: 12px;
+}
+
+.filter-title i {
+  color: #9b6b43;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: rgba(155, 107, 67, 0.08);
+  border: 1px solid rgba(155, 107, 67, 0.25);
+  color: #e6edf3;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(155, 107, 67, 0.55);
+}
+
+.filter-btn.active {
+  background: rgba(155, 107, 67, 0.16);
+  border-color: #9b6b43;
+  box-shadow: 0 0 14px rgba(155, 107, 67, 0.18);
+}
+
+.filter-icon {
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+  object-fit: contain;
+}
+
+.filter-hint {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #8b949e;
+  line-height: 1.4;
+}
+
+.no-projects {
+  margin-top: 18px;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px dashed #30363d;
+  color: #8b949e;
+  text-align: center;
+}
+
+.no-projects i {
+  font-size: 1.3rem;
+  color: #9b6b43;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Make the projects column reuse your existing style */
+.projects-layout .projects-section {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive: stack filter above projects */
+@media (max-width: 900px) {
+  .projects-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-filter {
+    position: static;
+  }
+
+  .filter-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    width: auto;
+  }
+}
+
