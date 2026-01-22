@@ -88,6 +88,24 @@ body {
   width: 100%;
 }
 
+/* ===== PIXEL ART (FINAL SIZES) ===== */
+.pixel-name {
+  height: 110px;
+  width: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  vertical-align: middle;
+}
+
+.pixel-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
 /* ===== CYBER BANNER ===== */
 .cyber-banner {
   position: relative;
@@ -117,13 +135,8 @@ body {
 }
 
 @keyframes gridMove {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(50px, 50px);
-  }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
 }
 
 .cyber-lines {
@@ -142,36 +155,14 @@ body {
   animation: scanLine 3s linear infinite;
 }
 
-.line-1 {
-  width: 100%;
-  top: 20%;
-  animation-delay: 0s;
-}
-
-.line-2 {
-  width: 100%;
-  top: 50%;
-  animation-delay: 1s;
-}
-
-.line-3 {
-  width: 100%;
-  top: 80%;
-  animation-delay: 2s;
-}
+.line-1 { width: 100%; top: 20%; animation-delay: 0s; }
+.line-2 { width: 100%; top: 50%; animation-delay: 1s; }
+.line-3 { width: 100%; top: 80%; animation-delay: 2s; }
 
 @keyframes scanLine {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .cyber-particles {
@@ -193,58 +184,17 @@ body {
   animation: float 8s ease-in-out infinite;
 }
 
-.particle:nth-child(1) {
-  left: 10%;
-  top: 20%;
-  animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-  left: 30%;
-  top: 60%;
-  animation-delay: 2s;
-}
-
-.particle:nth-child(3) {
-  left: 60%;
-  top: 30%;
-  animation-delay: 4s;
-}
-
-.particle:nth-child(4) {
-  left: 80%;
-  top: 70%;
-  animation-delay: 6s;
-}
-
-.particle:nth-child(5) {
-  left: 50%;
-  top: 10%;
-  animation-delay: 1s;
-}
+.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 30%; top: 60%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 60%; top: 30%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 80%; top: 70%; animation-delay: 6s; }
+.particle:nth-child(5) { left: 50%; top: 10%; animation-delay: 1s; }
 
 @keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0.3;
-  }
-
-  25% {
-    transform: translateY(-30px) translateX(20px);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translateY(-60px) translateX(-20px);
-    opacity: 0.5;
-  }
-
-  75% {
-    transform: translateY(-30px) translateX(10px);
-    opacity: 0.8;
-  }
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  25% { transform: translateY(-30px) translateX(20px); opacity: 1; }
+  50% { transform: translateY(-60px) translateX(-20px); opacity: 0.5; }
+  75% { transform: translateY(-30px) translateX(10px); opacity: 0.8; }
 }
 
 .banner-content {
@@ -290,55 +240,21 @@ body {
 }
 
 @keyframes glitch-anim {
-  0% {
-    clip: rect(42px, 9999px, 44px, 0);
-  }
-
-  20% {
-    clip: rect(12px, 9999px, 59px, 0);
-  }
-
-  40% {
-    clip: rect(33px, 9999px, 20px, 0);
-  }
-
-  60% {
-    clip: rect(87px, 9999px, 53px, 0);
-  }
-
-  80% {
-    clip: rect(23px, 9999px, 92px, 0);
-  }
-
-  100% {
-    clip: rect(4px, 9999px, 98px, 0);
-  }
+  0% { clip: rect(42px, 9999px, 44px, 0); }
+  20% { clip: rect(12px, 9999px, 59px, 0); }
+  40% { clip: rect(33px, 9999px, 20px, 0); }
+  60% { clip: rect(87px, 9999px, 53px, 0); }
+  80% { clip: rect(23px, 9999px, 92px, 0); }
+  100% { clip: rect(4px, 9999px, 98px, 0); }
 }
 
 @keyframes glitch-anim2 {
-  0% {
-    clip: rect(65px, 9999px, 100px, 0);
-  }
-
-  20% {
-    clip: rect(79px, 9999px, 85px, 0);
-  }
-
-  40% {
-    clip: rect(66px, 9999px, 4px, 0);
-  }
-
-  60% {
-    clip: rect(29px, 9999px, 54px, 0);
-  }
-
-  80% {
-    clip: rect(92px, 9999px, 98px, 0);
-  }
-
-  100% {
-    clip: rect(54px, 9999px, 33px, 0);
-  }
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  20% { clip: rect(79px, 9999px, 85px, 0); }
+  40% { clip: rect(66px, 9999px, 4px, 0); }
+  60% { clip: rect(29px, 9999px, 54px, 0); }
+  80% { clip: rect(92px, 9999px, 98px, 0); }
+  100% { clip: rect(54px, 9999px, 33px, 0); }
 }
 
 .cursor-blink {
@@ -347,16 +263,8 @@ body {
 }
 
 @keyframes blink {
-
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  51%,
-  100% {
-    opacity: 0;
-  }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .cyber-subtitle {
@@ -384,25 +292,13 @@ body {
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink-cursor {
-
-  from,
-  to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: #9b6b43;
-  }
+  from, to { border-color: transparent; }
+  50% { border-color: #9b6b43; }
 }
 
 /* ===== SOCIAL ICONS ===== */
@@ -449,6 +345,50 @@ body {
   color: #8b949e;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* ===== LEGEND (HEADER + MIDDLE STICKY) ===== */
+.status-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin: 18px 0 26px;
+  color: #8b949e;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+}
+
+.status-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  /* keeps it crisp */
+}
+
+/* Middle sticky legend (the one you add inside projects-section) */
+.status-legend--sticky {
+  position: sticky;
+  top: 92px; /* below fixed nav */
+  z-index: 50;
+
+  width: fit-content;
+  margin: 0 auto 22px auto;
+  padding: 10px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 /* ===== CTA SECTION ===== */
@@ -548,7 +488,7 @@ header p {
   line-height: 1.6;
 }
 
-/* ===== SOCIAL ICONS ===== */
+/* ===== SOCIAL ICONS (legacy support) ===== */
 .social-header {
   margin-top: 15px;
 }
@@ -719,11 +659,10 @@ li {
   font-family: 'Fira Code', monospace;
 }
 
-.status-icon {
+/* Keep icons a bit smaller inside the pills only */
+.status-pill .status-icon {
   width: 18px;
   height: 18px;
-  image-rendering: pixelated;
-  /* keeps it crisp */
 }
 
 .meta-dot {
@@ -909,7 +848,6 @@ li {
   box-shadow: 0 0 14px rgba(155, 107, 67, 0.25);
 }
 
-
 .cert-icon {
   background: rgba(155, 107, 67, 0.2);
   width: 60px;
@@ -998,107 +936,6 @@ footer {
   color: #8b949e;
   font-size: 0.9rem;
   margin-top: 100px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  section {
-    margin: 40px auto;
-  }
-
-  .nav-links {
-    gap: 15px;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-  }
-
-  .cyber-title {
-    font-size: 2.2rem;
-  }
-
-  .cyber-subtitle {
-    font-size: 1rem;
-  }
-
-  .cyber-banner {
-    min-height: 400px;
-    padding: 120px 20px 80px;
-  }
-
-  .page-header {
-    padding: 100px 20px 50px;
-  }
-
-  .page-header h1 {
-    font-size: 2rem;
-  }
-
-  .cta-card {
-    padding: 30px 20px;
-  }
-
-  .cta-card h2 {
-    font-size: 1.5rem;
-  }
-
-  .tabs-nav {
-    gap: 5px;
-  }
-
-  .tab-btn {
-    padding: 12px 15px;
-    font-size: 0.9rem;
-  }
-
-  .tab-btn i {
-    font-size: 0.9rem;
-  }
-
-  .project-header {
-    flex-direction: column;
-  }
-
-  .cert-header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .cert-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .cert-icon i {
-    font-size: 1.2rem;
-  }
-}
-
-.pixel-name {
-  height: 110px;
-  /* adjust */
-  width: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  vertical-align: middle;
-}
-
-.pixel-logo {
-  height: 34px;
-  /* try 34 first */
-  width: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  display: block;
 }
 
 /* ===== EXPERIENCE GALLERY ===== */
@@ -1284,6 +1121,109 @@ footer {
   font-family: 'Fira Code', monospace;
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  section {
+    margin: 40px auto;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .cyber-title {
+    font-size: 2.2rem;
+  }
+
+  .cyber-subtitle {
+    font-size: 1rem;
+  }
+
+  .cyber-banner {
+    min-height: 400px;
+    padding: 120px 20px 80px;
+  }
+
+  .page-header {
+    padding: 100px 20px 50px;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .cta-card {
+    padding: 30px 20px;
+  }
+
+  .cta-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .tabs-nav {
+    gap: 5px;
+  }
+
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .tab-btn i {
+    font-size: 0.9rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+  }
+
+  .cert-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cert-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cert-icon i {
+    font-size: 1.2rem;
+  }
+
+  /* Mobile tweaks for pixel/legend */
+  .pixel-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .status-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .status-legend {
+    gap: 14px;
+    margin: 14px 0 20px;
+  }
+
+  .status-legend--sticky {
+    top: 86px;
+  }
+}
+
 /* Mobile modal */
 @media (max-width: 600px) {
   .modal-card {
@@ -1303,20 +1243,4 @@ footer {
     width: 84px;
     height: 58px;
   }
-}
-
-.status-legend {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin: 18px 0 26px;
-  color: #8b949e;
-}
-
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9rem;
 }
