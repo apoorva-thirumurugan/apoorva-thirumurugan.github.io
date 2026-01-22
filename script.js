@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   certCards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // If you ever add links inside the card, this prevents clicking a link from toggling
-      // (optional safety)
       if (e.target.closest('a')) return;
 
       const targetId = card.getAttribute('data-target');
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const details = document.getElementById(targetId);
       if (!details) return;
 
-      // Close all other open cert details (optional: "accordion" behavior)
+      // Close all other open cert details ("accordion" behavior)
       document.querySelectorAll('.cert-details.open').forEach(openEl => {
         if (openEl !== details) openEl.classList.remove('open');
       });
@@ -73,6 +71,48 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // =========================
+  // Projects filtering (projects.html)
+  // Requires:
+  //  - .filter-btn buttons with data-filter="all|exploring|in-progress|completed"
+  //  - .project-card elements with data-status="exploring|in-progress|completed"
+  //  - optional: #noProjects element (hidden by default)
+  // =========================
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card[data-status]');
+  const noProjects = document.getElementById('noProjects');
+
+  if (filterButtons.length && projectCards.length) {
+    function applyFilter(filterValue) {
+      let visible = 0;
+
+      projectCards.forEach(card => {
+        const status = card.getAttribute('data-status');
+        const show = (filterValue === 'all') || (status === filterValue);
+
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      if (noProjects) {
+        noProjects.hidden = visible !== 0;
+      }
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter') || 'all';
+        applyFilter(filterValue);
+      });
+    });
+
+    // default
+    applyFilter('all');
+  }
 });
 
 // ===== Experience Gallery Modal =====
@@ -128,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Click thumbnail to open
   document.querySelectorAll('.exp-gallery').forEach(gallery => {
     const galleryId = gallery.getAttribute('data-gallery') || 'Highlights';
+    const galleryTitle = gallery.getAttribute('data-title') || galleryId.toUpperCase();
 
     const thumbs = Array.from(gallery.querySelectorAll('.thumb')).map(t => ({
       src: t.getAttribute('src'),
@@ -141,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
       cameraBtn.addEventListener('click', () => {
         currentImages = thumbs;
         currentIndex = 0;
-        openModal(galleryId.toUpperCase());
+        openModal(galleryTitle);
         render();
       });
     }
@@ -150,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
       thumb.addEventListener('click', () => {
         currentImages = thumbs;
         currentIndex = idx;
-        openModal(galleryId.toUpperCase());
+        openModal(galleryTitle);
         render();
       });
     });
