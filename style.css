@@ -86,59 +86,58 @@ body {
   width: 100%;
 }
 
-/* ===== HERO BANNER WITH BACKGROUND ===== */
+/* ===== HERO BANNER WITH BACKGROUND (FULL IMAGE, NO CROP) ===== */
 .hero-banner {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  /* Changed from center to flex-start */
+  justify-content: center;
+  /* center vertically */
   text-align: center;
-  padding: 200px 20px 100px;
-  /* Increased top padding from 150px to 200px */
+  padding: 120px 20px 80px;
+  /* space for fixed nav */
   overflow: hidden;
 }
 
-/* Background image - MORE VISIBLE */
+/* Background image: show entire image */
 .hero-banner::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/bg.jpg');
-  /* or bg.png */
-  background-size: cover;
+  inset: 0;
+  background-image: url('assets/bg.webp');
+  /* ✅ your new background */
+  background-size: contain;
+  /* ✅ full image visible */
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.7;
+  background-color: #0d1117;
+  /* bars fill with site bg */
+  opacity: 1;
   z-index: 0;
 }
 
-/* Lighter overlay for better text readability */
+/* Overlay for readability */
 .hero-banner::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.4) 0%, rgba(13, 17, 23, 0.6) 100%);
+  inset: 0;
+  background: rgba(13, 17, 23, 0.35);
+  /* tweak 0.25–0.5 if needed */
   z-index: 1;
 }
 
+/* Hero content on top */
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   max-width: 800px;
-  padding-top: 60px;
-  /* Added extra spacing from top */
+  padding-top: 0;
+  /* removed extra push down */
 }
 
-/* Name styling - 64px centered with better contrast */
+/* Name styling */
 .hero-name {
   font-size: 64px;
   font-family: 'Instrument Serif', serif;
@@ -146,10 +145,10 @@ body {
   margin-bottom: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
-/* Three transparent buttons with better visibility */
+/* Buttons */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -158,7 +157,7 @@ body {
 }
 
 .hero-btn {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.30);
   color: #ffffff;
   border: 2px solid #ffffff;
   padding: 16px 48px;
@@ -183,16 +182,12 @@ body {
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .hero-banner {
-    padding: 150px 20px 80px;
-    /* Adjust for mobile */
-  }
-
-  .hero-content {
-    padding-top: 30px;
+    padding: 110px 20px 70px;
   }
 
   .hero-name {
     font-size: 48px;
+    margin-bottom: 40px;
   }
 
   .hero-buttons {
@@ -205,8 +200,6 @@ body {
     max-width: 280px;
   }
 }
-
-
 
 /* ===== SECTIONS ===== */
 section {
@@ -939,22 +932,8 @@ footer {
   padding: 0 20px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (rest) ===== */
 @media (max-width: 600px) {
-  .hero-name {
-    font-size: 48px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hero-btn {
-    width: 100%;
-    max-width: 280px;
-  }
-
   .nav-links {
     gap: 15px;
   }
