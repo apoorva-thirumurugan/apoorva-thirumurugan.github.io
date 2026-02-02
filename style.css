@@ -99,7 +99,7 @@ body {
   overflow: hidden;
 }
 
-/* Background image */
+/* Background image - MORE VISIBLE */
 .hero-banner::before {
   content: '';
   position: absolute;
@@ -107,16 +107,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('assets/bg.webp');
+  background-image: url('assets/bg.jpg');
   /* or bg.png */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3;
+  opacity: 0.7;
+  /* Changed from 0.3 to 0.7 - much more visible */
   z-index: 0;
 }
 
-/* Dark overlay for better text readability */
+/* Lighter overlay for better text readability */
 .hero-banner::after {
   content: '';
   position: absolute;
@@ -124,27 +125,32 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.7) 0%, rgba(13, 17, 23, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.4) 0%, rgba(13, 17, 23, 0.6) 100%);
+  /* Changed from 0.7/0.9 to 0.4/0.6 - lighter overlay */
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
+  /* This puts content on top */
   max-width: 800px;
 }
 
-/* Name styling - 64px centered */
+/* Name styling - 64px centered with better contrast */
 .hero-name {
   font-size: 64px;
   font-family: 'Instrument Serif', serif;
-  color: #f0f6fc;
+  color: #ffffff;
+  /* Changed to pure white for better contrast */
   margin-bottom: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  /* Added shadow for readability */
 }
 
-/* Three transparent buttons */
+/* Three transparent buttons with better visibility */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -153,9 +159,10 @@ body {
 }
 
 .hero-btn {
-  background: transparent;
-  color: #f0f6fc;
-  border: 2px solid #f0f6fc;
+  background: rgba(0, 0, 0, 0.3);
+  /* Slight dark background */
+  color: #ffffff;
+  border: 2px solid #ffffff;
   padding: 16px 48px;
   font-size: 1.1rem;
   font-family: 'Instrument Serif', serif;
@@ -164,15 +171,18 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
+  backdrop-filter: blur(5px);
+  /* Adds glass effect */
 }
 
 .hero-btn:hover {
-  background: rgba(240, 246, 252, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-color: #9b6b43;
   color: #9b6b43;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(155, 107, 67, 0.3);
+  box-shadow: 0 4px 15px rgba(155, 107, 67, 0.4);
 }
+
 
 /* ===== SECTIONS ===== */
 section {
