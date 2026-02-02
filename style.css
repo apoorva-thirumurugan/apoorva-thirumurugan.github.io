@@ -93,9 +93,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Changed from center to flex-start */
   text-align: center;
-  padding: 150px 20px 100px;
+  padding: 200px 20px 100px;
+  /* Increased top padding from 150px to 200px */
   overflow: hidden;
 }
 
@@ -113,7 +115,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.7;
-  /* Changed from 0.3 to 0.7 - much more visible */
   z-index: 0;
 }
 
@@ -126,15 +127,15 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, rgba(13, 17, 23, 0.4) 0%, rgba(13, 17, 23, 0.6) 100%);
-  /* Changed from 0.7/0.9 to 0.4/0.6 - lighter overlay */
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
-  /* This puts content on top */
   max-width: 800px;
+  padding-top: 60px;
+  /* Added extra spacing from top */
 }
 
 /* Name styling - 64px centered with better contrast */
@@ -142,12 +143,10 @@ body {
   font-size: 64px;
   font-family: 'Instrument Serif', serif;
   color: #ffffff;
-  /* Changed to pure white for better contrast */
   margin-bottom: 60px;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  /* Added shadow for readability */
 }
 
 /* Three transparent buttons with better visibility */
@@ -160,7 +159,6 @@ body {
 
 .hero-btn {
   background: rgba(0, 0, 0, 0.3);
-  /* Slight dark background */
   color: #ffffff;
   border: 2px solid #ffffff;
   padding: 16px 48px;
@@ -172,7 +170,6 @@ body {
   transition: all 0.3s ease;
   display: inline-block;
   backdrop-filter: blur(5px);
-  /* Adds glass effect */
 }
 
 .hero-btn:hover {
@@ -182,6 +179,33 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(155, 107, 67, 0.4);
 }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .hero-banner {
+    padding: 150px 20px 80px;
+    /* Adjust for mobile */
+  }
+
+  .hero-content {
+    padding-top: 30px;
+  }
+
+  .hero-name {
+    font-size: 48px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 
 
 /* ===== SECTIONS ===== */
