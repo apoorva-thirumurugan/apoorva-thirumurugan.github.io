@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;700&display=swap');
 
 body {
   font-family: 'Instrument Serif', serif;
@@ -129,13 +130,16 @@ body {
   max-width: 900px;
 }
 
+/* UPDATED: not bold, tighter letter spacing */
 .hero-name {
   font-size: 64px;
   color: #ffffff;
   margin-bottom: 60px;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-}
 
+  font-weight: 400;          /* dont bold the header */
+  letter-spacing: -0.025em;  /* -2.5% */
+}
 
 /* Buttons */
 .hero-buttons {
@@ -143,6 +147,8 @@ body {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+
+  transform: translateY(-19px); /* move ~0.5 cm closer to name */
 }
 
 .hero-btn {
@@ -168,6 +174,12 @@ body {
   box-shadow: 0 4px 15px rgba(155, 107, 67, 0.4);
 }
 
+/* UPDATED: make Community smaller (add class to that button: hero-btn--community) */
+.hero-btn--community {
+  padding: 14px 40px;
+  font-size: 1rem;
+}
+
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .hero-banner {
@@ -182,6 +194,7 @@ body {
   .hero-buttons {
     flex-direction: column;
     gap: 15px;
+    transform: translateY(-14px); /* slightly less on mobile */
   }
 
   .hero-btn {
@@ -197,20 +210,29 @@ section {
   padding: 0 20px;
 }
 
+/* UPDATED: section titles use Inter Bold 36, letter spacing -2% */
 h2 {
-  font-size: 1.6rem;
+  font-size: 36px;
   color: #f0f6fc;
   border-left: 4px solid #9b6b43;
   padding-left: 10px;
-  font-family: 'Instrument Serif', serif;
   margin-bottom: 20px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em; /* -2% */
 }
 
+/* UPDATED: content text uses Inter Medium, letter spacing -0.5% */
 p,
 li {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.55;         /* slightly tighter than 1.6 */
   color: #c9d1d9;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;          /* Medium */
+  letter-spacing: -0.005em;  /* -0.5% */
 }
 
 /* ===== CARDS ===== */
