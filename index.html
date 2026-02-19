@@ -10,14 +10,18 @@
 </head>
 
 <body>
+  <!-- Aurora transition overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
   <!-- Navigation Bar -->
   <nav class="main-nav">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo"></a>
+      <a href="index.html" class="nav-logo">AT</a>
 
       <div class="nav-links">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="projects.html" class="nav-link">Projects</a>
+        <a href="community.html" class="nav-link">Community</a>
       </div>
     </div>
   </nav>
@@ -25,7 +29,6 @@
   <!-- Hero Banner with Background -->
   <header class="hero-banner">
     <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-      <!-- Optional: better compression/support -->
       <source src="assets/hero.webm" type="video/webm" />
       <source src="assets/hero.mp4" type="video/mp4" />
     </video>
@@ -37,18 +40,18 @@
       <div class="hero-buttons">
         <a href="#experience" class="hero-btn">Work</a>
         <a href="projects.html" class="hero-btn">Projects</a>
-        <a href="#extracurriculars-tab" class="hero-btn">Community</a>
+        <a href="community.html" class="hero-btn hero-btn--community">Community</a>
       </div>
     </div>
   </header>
 
-
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm passionate about blending engineering, cybersecurity, and creativity to design secure, intelligent systems
-      that make a real impact. My work spans from automating SOC workflows to developing embedded systems and creating
-      accessible security education resources.
+      I'm passionate about blending engineering, cybersecurity, and creativity
+      to design secure, intelligent systems that make a real impact. My work
+      spans from automating SOC workflows to developing embedded systems and
+      creating accessible security education resources.
     </p>
   </section>
 
@@ -56,20 +59,35 @@
     <h2>Work Experience</h2>
 
     <div class="experience-card">
-      <h3>Information Security Co-op – Computing & Communications Services (CCS), University of Guelph</h3>
+      <h3>
+        Information Security Co-op – Computing &amp; Communications Services (CCS),
+        University of Guelph
+      </h3>
       <p><strong>Jan 2025 – Present | Guelph, ON</strong></p>
 
       <ul>
-        <li>Triaged and resolved information security tickets and incidents involving account compromises, phishing, and
-          other cybersecurity threats.</li>
-        <li>Developed and deployed <strong>Power Automate</strong> solutions to automate SOC processes, demonstrated
-          automation capabilities to SOC and IAM teams.</li>
-        <li>Monitored and analyzed security service logs for anomalies and risks, improving incident detection and
-          response workflows.</li>
-        <li>Created a <strong>PHP script</strong> to extend the Threat Intelligence Feed Editor (TIFE), increasing
-          efficiency and accuracy of threat data management.</li>
-        <li>Authored monthly cybersecurity blog articles, translating complex technical topics into accessible materials
-          for the university community.</li>
+        <li>
+          Triaged and resolved information security tickets and incidents
+          involving account compromises, phishing, and other cybersecurity threats.
+        </li>
+        <li>
+          Developed and deployed <strong>Power Automate</strong> solutions to
+          automate SOC processes, and demonstrated automation capabilities to SOC
+          and IAM teams.
+        </li>
+        <li>
+          Monitored and analyzed security service logs for anomalies and risks,
+          improving incident detection and response workflows.
+        </li>
+        <li>
+          Created a <strong>PHP script</strong> to extend the Threat Intelligence
+          Feed Editor (TIFE), increasing efficiency and accuracy of threat data
+          management.
+        </li>
+        <li>
+          Authored monthly cybersecurity blog articles, translating complex
+          technical topics into accessible materials for the university community.
+        </li>
       </ul>
 
       <!-- Experience gallery -->
@@ -104,9 +122,18 @@
       <h3>Research Assistant – Biswas Soil Lab, University of Guelph</h3>
       <p><strong>Jun 2024 – Aug 2024 | Guelph, ON</strong></p>
       <ul>
-        <li>Developed a <strong>PCB in KiCad</strong> for an in-field soil carbon sensor system.</li>
-        <li>Created <strong>Python scripts</strong> for web scraping soil resource data from websites and PDFs.</li>
-        <li>Collected soil images for AI model training and performed schematic design and data management.</li>
+        <li>
+          Developed a <strong>PCB in KiCad</strong> for an in-field soil carbon
+          sensor system.
+        </li>
+        <li>
+          Created <strong>Python scripts</strong> for web scraping soil resource
+          data from websites and PDFs.
+        </li>
+        <li>
+          Collected soil images for AI model training and performed schematic
+          design and data management.
+        </li>
       </ul>
     </div>
   </section>
@@ -115,7 +142,10 @@
   <section class="cta-section">
     <div class="cta-card">
       <h2><i class="fas fa-code"></i> Explore My Projects</h2>
-      <p>Check out my technical projects, from operating systems development to CAD design</p>
+      <p>
+        Check out my technical projects, from operating systems development to
+        CAD design.
+      </p>
       <a href="projects.html" class="cta-button">
         View All Projects <i class="fas fa-arrow-right"></i>
       </a>
@@ -138,9 +168,14 @@
       <div class="extracurricular-card">
         <div class="extracurricular-header">
           <h3><i class="fas fa-briefcase"></i> Vice President Programming</h3>
-          <span class="org-name">Guelph Engineering Professional Development (GEPD)</span>
+          <span class="org-name">
+            Guelph Engineering Professional Development (GEPD)
+          </span>
         </div>
-        <p>Leading programming initiatives and organizing professional development events for engineering students.</p>
+        <p>
+          Leading programming initiatives and organizing professional
+          development events for engineering students.
+        </p>
       </div>
 
       <div class="extracurricular-card">
@@ -148,7 +183,10 @@
           <h3><i class="fas fa-heart"></i> Big Sisters Little Sisters (BSLS) Mentor</h3>
           <span class="org-name">Mentorship Program</span>
         </div>
-        <p>Providing guidance and support to younger students through mentorship and community engagement.</p>
+        <p>
+          Providing guidance and support to younger students through mentorship
+          and community engagement.
+        </p>
       </div>
 
       <div class="extracurricular-card">
@@ -156,28 +194,37 @@
           <h3><i class="fas fa-female"></i> Women in Science and Engineering (WiSE)</h3>
           <span class="org-name">Student Organization</span>
         </div>
-        <p>Active member promoting diversity and inclusion in STEM fields through events and networking opportunities.
+        <p>
+          Active member promoting diversity and inclusion in STEM fields through
+          events and networking opportunities.
         </p>
       </div>
 
       <div class="extracurricular-card">
         <div class="extracurricular-header">
           <h3><i class="fas fa-pen-fancy"></i> Writing Peer Helper</h3>
-          <span class="org-name">Student Experience, Peer Helper Program (PHP)</span>
+          <span class="org-name">
+            Student Experience, Peer Helper Program (PHP)
+          </span>
         </div>
-        <p>Assisting fellow students with writing skills, providing feedback, and supporting academic success.</p>
+        <p>
+          Assisting fellow students with writing skills, providing feedback, and
+          supporting academic success.
+        </p>
       </div>
     </div>
 
     <!-- Certifications Tab -->
     <div class="tab-content" id="certifications-tab">
-      <!-- ISC2 CC (click card to expand image) -->
+      <!-- ISC2 CC -->
       <div class="certification-card cert-toggle" data-target="cert-isc2">
         <div class="cert-header">
           <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
           <div class="cert-info">
             <h3>Certified in Cybersecurity (CC)</h3>
-            <p class="cert-issuer">ISC2 (International Information System Security Certification Consortium)</p>
+            <p class="cert-issuer">
+              ISC2 (International Information System Security Certification Consortium)
+            </p>
             <p class="cert-date">Certified Since: 2025</p>
             <p class="cert-id">Certification ID: 2359202</p>
           </div>
@@ -188,7 +235,7 @@
         </div>
       </div>
 
-      <!-- PCEP (ONLY verify link is clickable) -->
+      <!-- PCEP -->
       <div class="certification-card">
         <div class="cert-header">
           <div class="cert-icon"><i class="fas fa-code"></i></div>
@@ -206,7 +253,7 @@
         </div>
       </div>
 
-      <!-- CSWA (click card to expand image) -->
+      <!-- CSWA -->
       <div class="certification-card cert-toggle" data-target="cert-cswa">
         <div class="cert-header">
           <div class="cert-icon"><i class="fas fa-drafting-compass"></i></div>

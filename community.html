@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Diary | Apoorva Thirumurugan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Aurora transition overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AT</a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="community.html" class="nav-link active">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1><i class="fas fa-book-open"></i> Community Diary</h1>
+        <p>
+            A digital diary of communities, outreach, and mentoring that shaped how I
+            think about engineering, security, and people.
+        </p>
+    </header>
+
+    <!-- Diary Book -->
+    <main class="diary-wrapper" data-diary>
+        <section class="diary-intro">
+            <h2>Flipping through the chapters</h2>
+            <p>
+                This diary flips through a few of my favourite community roles at the
+                University of Guelph and beyond. Each page highlights one role&mdash;
+                click the photo or video and watch the story type itself onto the page.
+            </p>
+        </section>
+
+        <section class="diary-book">
+            <!-- Left spine / previous -->
+            <div class="diary-spine">
+                <button type="button" aria-label="Previous entry" data-diary-prev>
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div>
+
+            <!-- Main book spread -->
+            <div class="diary-main">
+                <!-- Left page: visual -->
+                <article class="diary-page-visual" data-diary-media>
+                    <div class="diary-tag">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span data-diary-meta>Community &amp; Service</span>
+                    </div>
+
+                    <h3 class="diary-title" data-diary-title>
+                        Cyber Events Lead
+                    </h3>
+
+                    <p class="diary-meta">
+                        <span data-diary-org>
+                            Guelph Cybersecurity Society · University of Guelph
+                        </span><br />
+                        <span data-diary-dates>Nov 2025 – Present</span> ·
+                        <span data-diary-location>Guelph, Ontario</span>
+                    </p>
+
+                    <div class="diary-media-frame">
+                        <img src="assets/experience/guelph_cyber.jpg" alt="Guelph Cybersecurity Society event"
+                            data-diary-image />
+                        <video data-diary-video muted playsinline style="display:none;"></video>
+
+                        <div class="diary-media-overlay">
+                            <div class="diary-media-label" data-diary-media-label>
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Tap to open this chapter
+                            </div>
+                            <div class="diary-media-hint">
+                                Click to play videos or explore photos on each page.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Right page: entry -->
+                <article class="diary-page-entry">
+                    <div class="diary-entry-heading">
+                        <h3 data-diary-entry-heading>
+                            Bringing cyber to campus nights
+                        </h3>
+                        <span data-diary-entry-subtitle>
+                            From CTF nights to intro workshops.
+                        </span>
+                    </div>
+
+                    <div class="diary-entry-body" data-diary-entry-body>
+                        <!-- typewriter text injected here -->
+                    </div>
+
+                    <div class="diary-footer">
+                        <span>Use the arrows to flip through entries.</span>
+                        <div class="diary-dots" data-diary-dots>
+                            <!-- dots injected -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Right spine / next -->
+            <div class="diary-spine">
+                <button type="button" aria-label="Next entry" data-diary-next>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Apoorva Thirumurugan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 /* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 body {
   font-family: 'Instrument Serif', serif;
@@ -64,6 +64,7 @@ body {
   transition: all 0.3s ease;
   position: relative;
   padding: 5px 0;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .nav-link::after {
@@ -96,10 +97,10 @@ body {
   justify-content: center;
   text-align: center;
   padding: 120px 20px 80px;
-  /* space for fixed nav */
   overflow: hidden;
   background: #0d1117;
-  /* fallback if video fails */
+  perspective: 1200px;
+  /* depth for parallax */
 }
 
 /* Video behind everything */
@@ -109,9 +110,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* fills screen (may crop slightly) */
   object-position: center;
   z-index: 0;
+  transform: translateZ(-40px) scale(1.08);
+  /* base depth */
 }
 
 /* Overlay above video for readability */
@@ -119,7 +121,6 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(13, 17, 23, 0.45);
-  /* tweak 0.25–0.6 */
   z-index: 1;
 }
 
@@ -136,9 +137,8 @@ body {
   color: #ffffff;
   margin-bottom: 60px;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-
-  font-weight: 400;          /* dont bold the header */
-  letter-spacing: -0.025em;  /* -2.5% */
+  font-weight: 400;
+  letter-spacing: -0.025em;
 }
 
 /* Buttons */
@@ -147,8 +147,7 @@ body {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-
-  transform: translateY(-19px); /* move ~0.5 cm closer to name */
+  transform: translateY(-19px);
 }
 
 .hero-btn {
@@ -194,7 +193,7 @@ body {
   .hero-buttons {
     flex-direction: column;
     gap: 15px;
-    transform: translateY(-14px); /* slightly less on mobile */
+    transform: translateY(-14px);
   }
 
   .hero-btn {
@@ -210,7 +209,7 @@ section {
   padding: 0 20px;
 }
 
-/* UPDATED: section titles use Inter Bold 36, letter spacing -2% */
+/* UPDATED: section titles use DM Sans Bold 36 */
 h2 {
   font-size: 36px;
   color: #f0f6fc;
@@ -218,21 +217,21 @@ h2 {
   padding-left: 10px;
   margin-bottom: 20px;
 
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em; /* -2% */
+  letter-spacing: -0.02em;
 }
 
-/* UPDATED: content text uses Inter Medium, letter spacing -0.5% */
+/* UPDATED: content text uses DM Sans Medium */
 p,
 li {
   font-size: 1rem;
-  line-height: 1.55;         /* slightly tighter than 1.6 */
+  line-height: 1.55;
   color: #c9d1d9;
 
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;          /* Medium */
-  letter-spacing: -0.005em;  /* -0.5% */
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.005em;
 }
 
 /* ===== CARDS ===== */
@@ -406,6 +405,7 @@ li {
   font-size: 0.85rem;
   font-weight: 500;
   border: 1px solid rgba(155, 107, 67, 0.3);
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .tech-stack {
@@ -896,6 +896,7 @@ footer {
   margin-bottom: 15px;
   border: none;
   padding: 0;
+  font-family: 'Instrument Serif', serif;
 }
 
 .cta-card h2 i {
@@ -920,6 +921,7 @@ footer {
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(155, 107, 67, 0.3);
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .cta-button:hover {
@@ -943,7 +945,292 @@ footer {
   padding: 0 20px;
 }
 
+/* ===== PAGE TRANSITION OVERLAY ===== */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top,
+      rgba(155, 107, 67, 0.35),
+      transparent 55%),
+    radial-gradient(circle at bottom,
+      rgba(46, 160, 67, 0.18),
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1500;
+}
+
+.page-transition.active {
+  opacity: 1;
+}
+
+/* ===== DIGITAL DIARY / BOOK (community page) ===== */
+.diary-wrapper {
+  max-width: 1100px;
+  margin: 80px auto 60px;
+  padding: 0 20px 60px;
+}
+
+.diary-intro {
+  max-width: 640px;
+  margin-bottom: 30px;
+}
+
+.diary-intro p {
+  color: #8b949e;
+  font-size: 1.05rem;
+}
+
+.diary-book {
+  position: relative;
+  margin: 0 auto;
+  max-width: 960px;
+  background: radial-gradient(circle at top left, #161b22 0%, #02040a 60%);
+  border-radius: 18px;
+  border: 1px solid rgba(155, 107, 67, 0.4);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  padding: 30px 26px 34px;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  gap: 18px;
+}
+
+.diary-spine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diary-spine button {
+  background: rgba(22, 27, 34, 0.9);
+  border: 1px solid rgba(155, 107, 67, 0.6);
+  color: #f0f6fc;
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.diary-spine button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(155, 107, 67, 0.6);
+  border-color: #b8865a;
+}
+
+.diary-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+  gap: 26px;
+}
+
+.diary-page-visual {
+  position: relative;
+  background: radial-gradient(circle at top, #101624 0%, #050711 60%);
+  border-radius: 14px;
+  border: 1px solid #30363d;
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.diary-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid rgba(155, 107, 67, 0.5);
+  background: rgba(155, 107, 67, 0.12);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #f0f6fc;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.diary-tag i {
+  color: #9b6b43;
+}
+
+.diary-title {
+  margin: 4px 0 2px;
+  font-size: 1.35rem;
+  color: #f0f6fc;
+  font-family: 'Instrument Serif', serif;
+}
+
+.diary-meta {
+  font-size: 0.9rem;
+  color: #8b949e;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.diary-media-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  background: radial-gradient(circle at top, #0b1020, #000 75%);
+  cursor: pointer;
+}
+
+.diary-media-frame img,
+.diary-media-frame video {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.diary-media-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(3, 8, 18, 0.85), transparent 55%);
+}
+
+.diary-media-label {
+  font-size: 0.9rem;
+  color: #e6edf3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.diary-media-label i {
+  color: #9b6b43;
+}
+
+.diary-media-hint {
+  font-size: 0.8rem;
+  color: #8b949e;
+  margin-top: 4px;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.diary-page-entry {
+  background: radial-gradient(circle at top, #101624 0%, #050711 60%);
+  border-radius: 14px;
+  border: 1px solid #30363d;
+  padding: 20px 20px 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.diary-page-entry::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0 0, rgba(155, 107, 67, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(46, 160, 67, 0.12), transparent 55%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.diary-entry-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.diary-entry-heading h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.diary-entry-heading span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.diary-entry-body {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  min-height: 140px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+}
+
+.diary-entry-body .cursor {
+  display: inline-block;
+  width: 8px;
+  margin-left: 2px;
+  background: #f0f6fc;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.diary-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #8b949e;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.diary-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.diary-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #30363d;
+}
+
+.diary-dot.active {
+  background: #9b6b43;
+  box-shadow: 0 0 10px rgba(155, 107, 67, 0.7);
+}
+
 /* ===== RESPONSIVE (rest) ===== */
+@media (max-width: 900px) {
+  .diary-book {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    padding: 26px 18px 28px;
+  }
+
+  .diary-main {
+    grid-template-columns: 1fr;
+  }
+
+  .diary-media-frame img,
+  .diary-media-frame video {
+    height: 220px;
+  }
+}
+
 @media (max-width: 600px) {
   .nav-links {
     gap: 15px;
@@ -1012,5 +1299,27 @@ footer {
   .thumb {
     width: 84px;
     height: 58px;
+  }
+
+  .diary-wrapper {
+    margin-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .diary-book {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  .diary-spine {
+    display: none;
+  }
+
+  .diary-main {
+    grid-template-columns: 1fr;
+  }
+
+  .diary-page-entry {
+    margin-top: 4px;
   }
 }
