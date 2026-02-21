@@ -1,8 +1,8 @@
 /* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=Arial:wght@400;700&display=swap');
 
 body {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Arial Narrow', 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background: #0d1117;
@@ -135,10 +135,20 @@ body {
 .hero-name {
   font-size: 64px;
   color: #ffffff;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -0.025em;
+  font-family: 'Arial', sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #b0b8c1;
+  margin-bottom: 50px;
+  font-family: 'Arial Narrow', 'Arial', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.005em;
 }
 
 /* Buttons */
@@ -217,7 +227,7 @@ h2 {
   padding-left: 10px;
   margin-bottom: 20px;
 
-  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -229,8 +239,8 @@ li {
   line-height: 1.55;
   color: #c9d1d9;
 
-  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 500;
+  font-family: 'Arial Narrow', 'Arial', sans-serif;
+  font-weight: 400;
   letter-spacing: -0.005em;
 }
 
@@ -586,7 +596,8 @@ li {
 h3 {
   margin-top: 0;
   color: #f0f6fc;
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
 }
 
 /* ===== FOOTER ===== */
@@ -802,6 +813,8 @@ footer {
   font-size: 2.8rem;
   color: #f0f6fc;
   margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
 }
 
 .page-header h1 i {
@@ -1082,8 +1095,9 @@ footer {
 .diary-media-frame video {
   display: block;
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
 }
 
 .diary-media-overlay {
