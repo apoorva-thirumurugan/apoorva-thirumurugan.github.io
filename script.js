@@ -211,3 +211,187 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') go(1);
   });
 })();
+
+// ===== Community Diary Book =====
+(function () {
+  const diary = document.querySelector('[data-diary]');
+  if (!diary) return;
+
+  const entries = [
+    {
+      meta: 'Community & Service',
+      title: 'Cyber Events Lead',
+      org: 'Guelph Cybersecurity Society · University of Guelph',
+      dates: 'Nov 2025 - Present',
+      location: 'Guelph, Ontario',
+      entryHeading: 'Bringing cyber to campus nights',
+      subtitle: 'From CTF nights to intro workshops.',
+      body: 'I organize and support events that make cybersecurity practical, approachable, and fun for students. From capture-the-flag evenings to beginner-friendly talks, each event focuses on hands-on learning and confidence building.',
+      mediaLabel: 'Tap to open this chapter',
+      image: 'assets/experience/guelph_cyber.jpeg',
+      alt: 'Guelph Cybersecurity Society event'
+    },
+    {
+      meta: 'Mentorship',
+      title: 'Writing Peer Helper',
+      org: 'Peer Helper Program · University of Guelph',
+      dates: '2024 - Present',
+      location: 'Guelph, Ontario',
+      entryHeading: 'Helping ideas land clearly',
+      subtitle: 'Technical writing with empathy.',
+      body: 'As a writing peer helper, I support students in structuring arguments, improving clarity, and communicating technical ideas effectively. This role sharpened how I explain complex topics to different audiences.',
+      mediaLabel: 'Open mentorship chapter',
+      image: 'assets/experience/career_peer.jpeg',
+      alt: 'Peer mentorship and writing support'
+    },
+    {
+      meta: 'Leadership',
+      title: 'Vice President Programming',
+      org: 'Guelph Engineering Professional Development',
+      dates: '2025 - Present',
+      location: 'Guelph, Ontario',
+      entryHeading: 'Building programs for growth',
+      subtitle: 'Planning events with real student impact.',
+      body: 'I coordinate professional development programming for engineering students by designing workshops, inviting speakers, and shaping sessions around practical career skills and confidence.',
+      mediaLabel: 'Open leadership chapter',
+      image: 'assets/experience/gepd_event.jpeg',
+      alt: 'Engineering professional development event'
+    },
+    {
+      meta: 'Outreach',
+      title: 'Women in STEM Supporter',
+      org: 'Community Mentorship & Outreach',
+      dates: 'Ongoing',
+      location: 'Ontario',
+      entryHeading: 'Creating inclusive technical spaces',
+      subtitle: 'Community-first engagement.',
+      body: 'Through outreach and mentorship activities, I contribute to initiatives that encourage more women and underrepresented students to explore engineering and cybersecurity with support and belonging.',
+      mediaLabel: 'Open outreach chapter',
+      image: 'assets/experience/acting.jpeg',
+      alt: 'Community outreach activity'
+    }
+  ];
+
+  const prevBtn = diary.querySelector('[data-diary-prev]');
+  const nextBtn = diary.querySelector('[data-diary-next]');
+  const spread = diary.querySelector('.diary-main');
+  const metaEl = diary.querySelector('[data-diary-meta]');
+  const titleEl = diary.querySelector('[data-diary-title]');
+  const orgEl = diary.querySelector('[data-diary-org]');
+  const datesEl = diary.querySelector('[data-diary-dates]');
+  const locationEl = diary.querySelector('[data-diary-location]');
+  const headingEl = diary.querySelector('[data-diary-entry-heading]');
+  const subtitleEl = diary.querySelector('[data-diary-entry-subtitle]');
+  const bodyEl = diary.querySelector('[data-diary-entry-body]');
+  const mediaLabelEl = diary.querySelector('[data-diary-media-label]');
+  const dotsEl = diary.querySelector('[data-diary-dots]');
+  const imageEl = diary.querySelector('[data-diary-image]');
+  const videoEl = diary.querySelector('[data-diary-video]');
+
+  if (!prevBtn || !nextBtn || !spread || !metaEl || !titleEl || !orgEl || !datesEl || !locationEl || !headingEl || !subtitleEl || !bodyEl || !mediaLabelEl || !dotsEl || !imageEl || !videoEl) {
+    return;
+  }
+
+  let current = 0;
+  let typeTimer = null;
+  let flipTimer = null;
+  let isFlipping = false;
+
+  dotsEl.innerHTML = entries
+    .map((_, index) => `<button class="diary-dot" type="button" aria-label="Go to entry ${index + 1}" data-diary-dot="${index}"></button>`)
+    .join('');
+
+  const dotButtons = Array.from(dotsEl.querySelectorAll('[data-diary-dot]'));
+
+  function stopTyping() {
+    if (typeTimer) {
+      clearInterval(typeTimer);
+      typeTimer = null;
+    }
+  }
+
+  function typeText(text) {
+    stopTyping();
+    bodyEl.textContent = '';
+    let position = 0;
+    typeTimer = setInterval(() => {
+      position += 2;
+      bodyEl.textContent = text.slice(0, position);
+      if (position >= text.length) {
+        stopTyping();
+      }
+    }, 12);
+  }
+
+  function updateDots() {
+    dotButtons.forEach((dot, index) => {
+      const active = index === current;
+      dot.classList.toggle('active', active);
+      dot.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+  }
+
+  function updateNavButtons() {
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === entries.length - 1;
+  }
+
+  function render(index, animateDirection) {
+    const entry = entries[index];
+
+    if (animateDirection) {
+      isFlipping = true;
+      spread.classList.remove('is-flipping-next', 'is-flipping-prev');
+      spread.classList.add(animateDirection === 'next' ? 'is-flipping-next' : 'is-flipping-prev');
+      if (flipTimer) clearTimeout(flipTimer);
+      flipTimer = setTimeout(() => {
+        spread.classList.remove('is-flipping-next', 'is-flipping-prev');
+        isFlipping = false;
+      }, 560);
+    }
+
+    metaEl.textContent = entry.meta;
+    titleEl.textContent = entry.title;
+    orgEl.textContent = entry.org;
+    datesEl.textContent = entry.dates;
+    locationEl.textContent = entry.location;
+    headingEl.textContent = entry.entryHeading;
+    subtitleEl.textContent = entry.subtitle;
+    mediaLabelEl.innerHTML = `<i class="fa-solid fa-book-open"></i>${entry.mediaLabel}`;
+
+    videoEl.pause();
+    videoEl.removeAttribute('src');
+    videoEl.style.display = 'none';
+    imageEl.style.display = 'block';
+    imageEl.src = entry.image;
+    imageEl.alt = entry.alt;
+
+    updateDots();
+    updateNavButtons();
+    typeText(entry.body);
+  }
+
+  function goTo(index, direction) {
+    if (isFlipping || index < 0 || index >= entries.length || index === current) return;
+    current = index;
+    render(current, direction);
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1, 'prev'));
+  nextBtn.addEventListener('click', () => goTo(current + 1, 'next'));
+
+  dotButtons.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const target = Number(dot.getAttribute('data-diary-dot'));
+      if (Number.isNaN(target)) return;
+      goTo(target, target > current ? 'next' : 'prev');
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') goTo(current - 1, 'prev');
+    if (event.key === 'ArrowRight') goTo(current + 1, 'next');
+  });
+
+  render(current);
+})();
